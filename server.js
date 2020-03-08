@@ -12,7 +12,7 @@ ex.get('/ue', (req, res) => {
     res.send(JSON.stringify(ue.data))
 })
 
-ex.get('/API', (req, res) => {
+ex.post('/API', (req, res) => {
     console.log(req)
     res.send(ue.getActions())
 })
