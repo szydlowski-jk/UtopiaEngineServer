@@ -5,7 +5,7 @@ const port = process.env.PORT
 const ue = require('./engine.js')
 
 ex.get('/', (req, res) => {
-    res.send('Hello Enigma')
+    res.send(req)
 })
 
 ex.get('/ue', (req, res) => {
