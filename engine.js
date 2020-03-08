@@ -596,3 +596,4 @@ let ue = new UtopiaEngine
 // console.log(ue.getAvailableActions())
 
 
+module.exports = new UtopiaEngine()

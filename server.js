@@ -2,8 +2,7 @@ const express = require('express')
 const ex = express()
 const port = process.env.PORT
 
-//const uejs = require('enigma')
-ue = new UtopiaEngine()
+const ue = require('enigma')
 
 ex.get('/', (req, res) => {
     res.send('Hello Enigma')
