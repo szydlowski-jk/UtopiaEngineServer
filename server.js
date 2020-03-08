@@ -2,7 +2,7 @@ const express = require('express')
 const ex = express()
 const port = process.env.PORT
 
-const ue = require('enigma')
+const ue = require('./enigma.js')
 
 ex.get('/', (req, res) => {
     res.send('Hello Enigma')
