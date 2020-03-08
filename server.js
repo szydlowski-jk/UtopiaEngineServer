@@ -5,11 +5,16 @@ const port = process.env.PORT
 const ue = require('./engine.js')
 
 ex.get('/', (req, res) => {
-    res.send(req)
+    res.send('Utopia Engine')
 })
 
 ex.get('/ue', (req, res) => {
     res.send(JSON.stringify(ue.data))
+})
+
+ex.get('/API', (req, res) => {
+    console.log(req)
+    res.send(ue.getActions())
 })
 
 ex.listen(port, () => {
