@@ -1,6 +1,9 @@
 const express = require('express')
+const cors = require('cors')
 const ex = express()
 const port = process.env.PORT || 3000
+
+ex.use(cors())
 
 const ue = require('./engine.js')
 
