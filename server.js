@@ -20,7 +20,7 @@ ex.get('/ue', (req, res) => {
 
 ex.post('/API', (req, res) => {
     console.log(req.body)
-    res.send(ue.getActions())
+    res.send(req.body)
 })
 
 ex.get('/API', (req, res) => {
