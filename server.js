@@ -7,10 +7,13 @@ ex.use(cors())
 
 const ue = require('./engine.js')
 
+ex.use('/', express.static('page'))
 
-ex.get('/', (req, res) => {
-    res.send('Utopia Engine')
-})
+// ex.get('/', (req, res) => {
+//     res.send('Utopia Engine')
+// })
+
+
 
 ex.get('/ue', (req, res) => {
     res.send(JSON.stringify(ue.data))
