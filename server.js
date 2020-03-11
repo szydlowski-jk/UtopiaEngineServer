@@ -4,6 +4,7 @@ const ex = express()
 const port = process.env.PORT || 3000
 
 ex.use(cors())
+ex.use(express.json())
 
 const ue = require('./engine.js')
 
@@ -12,8 +13,6 @@ ex.use('/', express.static('page'))
 // ex.get('/', (req, res) => {
 //     res.send('Utopia Engine')
 // })
-
-
 
 ex.get('/ue', (req, res) => {
     res.send(JSON.stringify(ue.data))
