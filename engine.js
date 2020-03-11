@@ -619,21 +619,21 @@ let ue = new UtopiaEngine
 // });
 
 
-fetch('https://utopiaengine.herokuapp.com/API', {
-  method: 'POST', // or 'PUT'
-  mode: 'no-cors', // no-cors, *cors, same-origin
-  headers: {
-    'Content-Type': 'application/json',
-  },
-  body: JSON.stringify({action: 'doRest', param: {}}),
-})
-.then((response) => response.text() )
-.then((data) => {
-    data = data ? JSON.parse(data) : {}
-      console.log('Success:', data);
-})
-.catch((error) => {
-  console.error('Error:', error)
-});
+// fetch('https://utopiaengine.herokuapp.com/API', {
+//   method: 'POST', // or 'PUT'
+//   mode: 'no-cors', // no-cors, *cors, same-origin
+//   headers: {
+//     'Content-Type': 'application/json',
+//   },
+//   body: JSON.stringify({action: 'doRest', param: {}}),
+// })
+// .then((response) => response.text() )
+// .then((data) => {
+//     data = data ? JSON.parse(data) : {}
+//       console.log('Success:', data);
+// })
+// .catch((error) => {
+//   console.error('Error:', error)
+// });
 
-//module.exports = new UtopiaEngine()
+module.exports = new UtopiaEngine()
