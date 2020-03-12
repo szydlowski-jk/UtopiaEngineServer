@@ -45,6 +45,6 @@ function validateBody ( body ) {
 
 function handleApiCall ( body ) {
     if ( body.action == "getState" ) {
-        return {result: true, state: ue.data}
+        return {result: true, state: ue.data, req: body}
     }
 }
