@@ -10,7 +10,7 @@ const ue = require('./engine.js')
 
 ex.use('/', express.static('page'))
 
-ex.post('/:gameId/:action', (req, res) => {
+ex.post('/game/:gameId/:action', (req, res) => {
     res.send(reb.params)
 })
 
