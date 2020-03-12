@@ -19,8 +19,9 @@ ex.get('/ue', (req, res) => {
 })
 
 ex.post('/API', (req, res) => {
-    console.log(req.body)
-    res.send(req.body)
+    res.send( handleApiCall( req.body ) )
+    // console.log(req.body)
+    // res.send(req.body)
 })
 
 ex.get('/API', (req, res) => {
@@ -31,3 +32,19 @@ ex.get('/API', (req, res) => {
 ex.listen(port, () => {
     console.log(`listening on port ${port}`)
 })
+
+function validateBody ( body ) {
+    if ( body.action != null &&
+         body.gameId != null &&
+         body.params != null ) {
+             return true
+    }
+
+    return false
+}
+
+function handleApiCall ( body ) {
+    if ( body.action == "getState" ) {
+        return {result: true, state: ue.data}
+    }
+}
