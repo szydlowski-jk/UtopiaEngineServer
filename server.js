@@ -43,6 +43,10 @@ function validateBody ( body ) {
     return false
 }
 
+function getDBdata ( gameId ) {
+    // todo
+}
+
 function handleApiCall ( body ) {
     if ( body.action == "getState" ) {
         return {result: true, state: ue.data, req: body}
