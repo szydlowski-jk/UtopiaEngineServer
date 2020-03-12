@@ -10,13 +10,20 @@ const ue = require('./engine.js')
 
 ex.use('/', express.static('page'))
 
+ex.post('/:gameId/:action', (req, res) => {
+    res.send(reb.params)
+})
+
 // ex.get('/', (req, res) => {
 //     res.send('Utopia Engine')
 // })
 
+// https://utopiaengine.herokuapp.com/3sv5jd/action
+
 ex.get('/ue', (req, res) => {
     res.send(JSON.stringify(ue.data))
 })
+
 
 ex.post('/API', (req, res) => {
     res.send( handleApiCall( req.body ) )
