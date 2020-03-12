@@ -48,6 +48,9 @@ function handleApiCall ( body ) {
         return {result: true, state: ue.data, req: body}
     }
 
-    return ue.doAction( body.action, body.params )
+    let result = ue.doAction( body.action, body.params )
+    result.data = ue.data
+    result.req = body
 
+    return result
 }
