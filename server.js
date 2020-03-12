@@ -47,4 +47,7 @@ function handleApiCall ( body ) {
     if ( body.action == "getState" ) {
         return {result: true, state: ue.data, req: body}
     }
+
+    return ue.doAction( body.action, body.params )
+
 }
