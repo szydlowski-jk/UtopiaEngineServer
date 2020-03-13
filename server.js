@@ -106,12 +106,12 @@ async function DBConnect () {
 //     client.close
 // }
 
-function DBget ( id ) {
+async function DBget ( id ) {
     console.log('DBget ' + id);
 
     if ( dbcoll ) {
         try {
-            let cursor = dbcoll.findOne({gameId: id})
+            let cursor = await dbcoll.findOne({gameId: id})
             ue.data = cursor
             console.log(ue.data)
         } catch ( err ) {
