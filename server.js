@@ -116,7 +116,7 @@ function DBget ( id ) {
 
 //            cursor.forEach(iterateFunc, errorFunc);
 
-//            console.log(ue.data)
+            console.log(ue.data)
         } catch ( err ) {
             console.log( err )
         }
