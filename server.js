@@ -6,13 +6,7 @@ const port = process.env.PORT || 3000
 
 const MongoClient = require('mongodb').MongoClient;
 const uri = "mongodb+srv://server:serverpassword@utopiadb-qtk8d.mongodb.net/test?retryWrites=true&w=majority";
-const client = new MongoClient(uri, { useNewUrlParser: true });
-client.connect(err => {
-  const collection = client.db("test").collection("devices");
-  console.log(collection);
-  // perform actions on the collection object
-  client.close();
-});
+let dbcoll;
 
 ex.use(cors())
 ex.use(express.json())
@@ -26,6 +20,19 @@ ex.post('/game/:gameId/:action', (req, res) => {
         // TODO HERE
     }
     res.send(req.params)
+})
+
+ex.get('/test/new', (req, res) => {
+    console.log('new game')
+    let id = newGame()
+    ue.data.gameid = id
+    res.send( ue.data )
+})
+
+ex.get('/test/get/:id', (req, res) => {
+    console.log('get game')
+    DBget( req.params[id] )
+    res.send( ue.data )
 })
 
 // ex.get('/', (req, res) => {
@@ -53,6 +60,77 @@ ex.get('/API', (req, res) => {
 ex.listen(port, () => {
     console.log(`listening on port ${port}`)
 })
+
+
+// function connectDB () {
+//     client.connect(err => {
+//         const dbcol = client.db("UtopiaEngineDB").collection("DataSheets")
+//         let ued = new UtopiaData()
+
+
+
+//        const collection = client.db("test").collection("devices");
+//        console.log(collection);
+        // perform actions on the collection object
+    //     client.close();
+    // });
+
+//}
+
+
+async function DBConnect () {
+    try {
+        const client = new MongoClient(uri, { useNewUrlParser: true, reconnectInterval: 1000, reconnectTries: Number.MAX_VALUE });
+        await client.connect()
+        dbcoll = client.db("UtopiaEngineDB").collection("DataSheets")
+    } catch ( err ) {
+        dbcoll = null
+    }
+
+}
+
+// function DBDisconnect () {
+//     client.close
+// }
+
+function DBget ( id ) {
+    if ( dbcoll ) {
+        try {
+            ue.data = dbcoll.find({gameId: id})
+            console.log(data)
+        } catch ( err ) {
+            console.log( err )
+        }
+    }
+}
+
+function DBset ( id, data ) {
+    if ( dbcoll ) {
+        try {
+            dbcoll.updateOne( { gameId: id }, { $data: data })
+        } catch ( err ) {
+            console.log( err )
+        }
+    }
+}
+
+
+function newGame () {
+    let data = {}
+    data.gameId = generateGameId()
+    data.data = new UtopiaData()
+    data.history = []
+
+    if ( dbcoll ) {
+        try {
+            dbcoll.insertOne( data )
+        } catch ( err ) {
+            console.log( err )
+        }
+    }
+
+    return data.gameId
+}
 
 function validateBody ( body ) {
     if ( body.action != null &&
