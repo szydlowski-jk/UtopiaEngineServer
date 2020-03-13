@@ -80,6 +80,7 @@ function handleApiCall ( body ) {
     return result
 }
 
+/* https://stackoverflow.com/a/1349426 */
 function makeid(length) {
     var result           = '';
     var characters       = 'abcdefghijklmnopqrstuvwxyz0123456789';
