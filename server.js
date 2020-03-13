@@ -38,6 +38,15 @@ ex.get('/test/get/:id', (req, res) => {
     res.send( ue.data )
 })
 
+ex.get('/test/day/:id', (req, res) => {
+    console.log('get game' + req.params)
+    DBget( req.params['id'] )
+    ue.doAction('doRest', {})
+    DBset( req.params['id'], ue.data )
+    res.send( ue.data )
+})
+
+
 // ex.get('/', (req, res) => {
 //     res.send('Utopia Engine')
 // })
