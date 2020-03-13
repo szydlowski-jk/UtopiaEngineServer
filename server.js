@@ -112,8 +112,9 @@ function DBget ( id ) {
     if ( dbcoll ) {
         try {
             let cursor = dbcoll.find({gameId: id})
+            ue.data = cursor[0]
 
-            cursor.forEach(iterateFunc, errorFunc);
+//            cursor.forEach(iterateFunc, errorFunc);
 
 //            console.log(ue.data)
         } catch ( err ) {
