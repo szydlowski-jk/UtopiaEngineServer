@@ -103,7 +103,7 @@ function DBget ( id ) {
     if ( dbcoll ) {
         try {
             ue.data = dbcoll.find({gameId: id})
-            console.log(data)
+            console.log(ue.data)
         } catch ( err ) {
             console.log( err )
         }
