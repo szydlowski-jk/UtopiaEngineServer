@@ -98,6 +98,8 @@ async function DBConnect () {
 // }
 
 function DBget ( id ) {
+    console.log('DBget ' + id);
+
     if ( dbcoll ) {
         try {
             ue.data = dbcoll.find({gameId: id})
