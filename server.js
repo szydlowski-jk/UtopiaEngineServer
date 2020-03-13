@@ -3,6 +3,17 @@ const cors = require('cors')
 const ex = express()
 const port = process.env.PORT || 3000
 
+
+const MongoClient = require('mongodb').MongoClient;
+const uri = "mongodb+srv://server:serverpassword@utopiadb-qtk8d.mongodb.net/test?retryWrites=true&w=majority";
+const client = new MongoClient(uri, { useNewUrlParser: true });
+client.connect(err => {
+  const collection = client.db("test").collection("devices");
+  console.log(collection);
+  // perform actions on the collection object
+  client.close();
+});
+
 ex.use(cors())
 ex.use(express.json())
 
@@ -11,6 +22,9 @@ const ue = require('./engine.js')
 ex.use('/', express.static('page'))
 
 ex.post('/game/:gameId/:action', (req, res) => {
+    if ( req.body != null ) {
+        // TODO HERE
+    }
     res.send(req.params)
 })
 
