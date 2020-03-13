@@ -33,8 +33,8 @@ ex.get('/test/new', (req, res) => {
 })
 
 ex.get('/test/get/:id', (req, res) => {
-    console.log('get game')
-    DBget( req.params[id] )
+    console.log('get game' + req.params)
+    DBget( req.params['id'] )
     res.send( ue.data )
 })
 
