@@ -81,6 +81,15 @@ ex.listen(port, () => {
 //}
 
 
+function iterateFunc(doc) {
+    console.log(JSON.stringify(doc, null, 4));
+ }
+
+function errorFunc(error) {
+    console.log(error);
+}
+
+
 async function DBConnect () {
     console.log('DB connect')
     try {
@@ -102,8 +111,11 @@ function DBget ( id ) {
 
     if ( dbcoll ) {
         try {
-            ue.data = dbcoll.find({gameId: id})
-            console.log(ue.data)
+            let cursor = dbcoll.find({gameId: id})
+
+            cursor.forEach(iterateFunc, errorFunc);
+
+//            console.log(ue.data)
         } catch ( err ) {
             console.log( err )
         }
