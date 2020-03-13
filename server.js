@@ -14,6 +14,8 @@ ex.use(express.json())
 const uejs = require('./engine.js')
 let ue = new uejs.UtopiaEngine()
 
+DBConnect()
+
 ex.use('/', express.static('page'))
 
 ex.post('/game/:gameId/:action', (req, res) => {
@@ -80,6 +82,7 @@ ex.listen(port, () => {
 
 
 async function DBConnect () {
+    console.log('DB connect')
     try {
         const client = new MongoClient(uri, { useNewUrlParser: true, reconnectInterval: 1000, reconnectTries: Number.MAX_VALUE });
         await client.connect()
