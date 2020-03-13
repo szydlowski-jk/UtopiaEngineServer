@@ -11,7 +11,8 @@ let dbcoll;
 ex.use(cors())
 ex.use(express.json())
 
-const ue = require('./engine.js')
+const uejs = require('./engine.js')
+let ue = new uejs.UtopiaEngine()
 
 ex.use('/', express.static('page'))
 
@@ -116,9 +117,10 @@ function DBset ( id, data ) {
 
 
 function newGame () {
+    let tmp = UtopiaEngine()
     let data = {}
     data.gameId = generateGameId()
-    data.data = new UtopiaData()
+    data.data = new uejs.UtopiaData()
     data.history = []
 
     if ( dbcoll ) {

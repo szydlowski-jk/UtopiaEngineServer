@@ -636,4 +636,7 @@ let ue = new UtopiaEngine
 //   console.error('Error:', error)
 // });
 
-module.exports = new UtopiaEngine()
+module.exports = {
+    UtopiaEngine,
+    UtopiaData
+}
