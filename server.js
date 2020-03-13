@@ -111,7 +111,7 @@ function DBget ( id ) {
 
     if ( dbcoll ) {
         try {
-            let cursor = await dbcoll.findOne({gameId: id})
+            let cursor = dbcoll.findOne({gameId: id})
             ue.data = cursor
             console.log(ue.data)
         } catch ( err ) {
