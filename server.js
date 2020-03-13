@@ -117,7 +117,6 @@ function DBset ( id, data ) {
 
 
 function newGame () {
-    let tmp = UtopiaEngine()
     let data = {}
     data.gameId = generateGameId()
     data.data = new uejs.UtopiaData()
