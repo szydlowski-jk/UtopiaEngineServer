@@ -4,14 +4,25 @@ const app = express()
 const port = process.env.PORT || 3000
 const engine = require('./engine.js')
 
+const MongoClient = require('mongodb').MongoClient;
+const uri = "mongodb+srv://server:serverpassword@utopiadb-qtk8d.mongodb.net/test?retryWrites=true&w=majority";
+
 app.use(cors())
 app.use(express.json())
 
-app.get('/', express.sendFile('page/index.html'));
-app.get('/g/*', express.sendFile('page/game.html'));
+//#region routing
+app.get('/', ( req, res ) => {
+    res.sendFile('page/index.html');
+});
 
-const MongoClient = require('mongodb').MongoClient;
-const uri = "mongodb+srv://server:serverpassword@utopiadb-qtk8d.mongodb.net/test?retryWrites=true&w=majority";
+app.get('/g/*', ( req, res ) => {
+    res.sendFile('page/game.html');
+});
+
+
+//#endregion routing
+
+
 //let dbcoll;
 
 
