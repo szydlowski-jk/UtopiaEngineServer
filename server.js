@@ -132,7 +132,7 @@ async function DBget ( id ) {
 function DBset ( id, data ) {
     if ( dbcoll ) {
         try {
-            dbcoll.updateOne( { gameId: id }, { $set: data })
+            dbcoll.updateOne( { gameId: id }, { $set: { data: ue.data } })
         } catch ( err ) {
             console.log( err )
         }
