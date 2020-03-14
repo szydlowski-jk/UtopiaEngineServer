@@ -1,14 +1,14 @@
-const express = require('express')
-const cors = require('cors')
-const app = express()
-const port = process.env.PORT || 3000
-const engine = require('./engine.js')
+const express = require('express');
+const cors = require('cors');
+const app = express();
+const port = (process.env.PORT || 3000);
+const engine = require('./engine.js');
 
 const MongoClient = require('mongodb').MongoClient;
 const uri = "mongodb+srv://server:serverpassword@utopiadb-qtk8d.mongodb.net/test?retryWrites=true&w=majority";
 
-app.use(cors())
-app.use(express.json())
+app.use(cors());
+app.use(express.json());
 
 //#region routing
 app.get('/', ( req, res ) => {
@@ -19,6 +19,10 @@ app.get('/g/*', ( req, res ) => {
     res.sendFile('page/game.html');
 });
 
+
+app.listen(port, () => {
+    console.log(`Utopia Engine Server started [port:${port}]`);
+});
 
 //#endregion routing
 
