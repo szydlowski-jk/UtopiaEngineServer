@@ -12,11 +12,12 @@ app.use(express.json());
 
 //#region routing
 app.get('/', ( req, res ) => {
-    res.sendFile('page/index.html');
+    res.sendFile('index.html', { root: __dirname + '/page/' });
 });
 
 app.get('/g/*', ( req, res ) => {
-    res.sendFile('page/game.html');
+//    res.sendFile('page/game.html');
+    res.sendFile('game.html', { root: __dirname + '/page' });
 });
 
 
