@@ -7,19 +7,24 @@ const engine = require('./engine.js');
 const MongoClient = require('mongodb').MongoClient;
 const uri = "mongodb+srv://server:serverpassword@utopiadb-qtk8d.mongodb.net/test?retryWrites=true&w=majority";
 
+const pageRoot = { root: __dirname + '/page' };
+
 app.use(cors());
 app.use(express.json());
 
 //#region routing
 app.get('/', ( req, res ) => {
-    res.sendFile('index.html', { root: __dirname + '/page/' });
+    res.sendFile('index.html', pageRoot );
 });
+
+app.get('/favicon.ico', ( req, res ) => {
+    res.sendFile( 'favicon.ico', pageRoot );
+})
 
 app.get('/g/*', ( req, res ) => {
 //    res.sendFile('page/game.html');
-    res.sendFile('game.html', { root: __dirname + '/page' });
+    res.sendFile('game.html', pageRoot );
 });
-
 
 app.listen(port, () => {
     console.log(`Utopia Engine Server started [port:${port}]`);
