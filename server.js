@@ -35,6 +35,10 @@ app.get('/g/:gameid(\\w{6})', ( req, res ) => {
     res.sendFile('game.html', pageRoot );
 });
 
+app.use( ( req, res, next ) => {
+    res.status(404).send('Oh well...');
+})
+
 app.listen(port, () => {
     console.log(`Utopia Engine Server started [port:${port}]`);
 });
