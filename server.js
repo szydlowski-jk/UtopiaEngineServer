@@ -25,6 +25,11 @@ app.get('/g/game.js', ( req, res ) => {
     res.sendFile('game.js', pageRoot );
 })
 
+app.get('/g)', ( req, res ) => {
+    //    res.sendFile('page/game.html');
+    res.sendFile('game.html', pageRoot );
+});
+
 app.get('/g/:gameid(\w{6})', ( req, res ) => {
 //    res.sendFile('page/game.html');
     res.sendFile('game.html', pageRoot );
