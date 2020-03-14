@@ -25,7 +25,7 @@ app.get('/g/game.js', ( req, res ) => {
     res.sendFile('game.js', pageRoot );
 })
 
-app.get('/g)', ( req, res ) => {
+app.get('/g', ( req, res ) => {
     //    res.sendFile('page/game.html');
     res.sendFile('game.html', pageRoot );
 });
