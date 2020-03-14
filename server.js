@@ -30,7 +30,7 @@ app.get('/g', ( req, res ) => {
     res.sendFile('game.html', pageRoot );
 });
 
-app.get('/g/:gameid(\w{6})', ( req, res ) => {
+app.get('/g/:gameid(\\w{6})', ( req, res ) => {
 //    res.sendFile('page/game.html');
     res.sendFile('game.html', pageRoot );
 });
