@@ -638,5 +638,5 @@ let ue = new UtopiaEngine
 
 module.exports = {
     UtopiaEngine,
-    UtopiaData
+    UtopiaData,
 }
