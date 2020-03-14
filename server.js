@@ -40,7 +40,7 @@ ex.get('/test/get/:id', (req, res) => {
 
 ex.get('/test/day/:id', (req, res) => {
     console.log('get game' + req.params)
-    await DBget( req.params['id'] )
+    DBget( req.params['id'] )
     ue.doAction('doRest', {})
     DBset( req.params['id'], ue.data )
     res.send( ue.data )
