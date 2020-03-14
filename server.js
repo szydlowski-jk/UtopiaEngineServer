@@ -121,7 +121,7 @@ async function DBget ( id ) {
     if ( dbcoll ) {
         try {
             let cursor = await dbcoll.findOne({gameId: id})
-            ue.data = cursor
+            ue.data = cursor.data
             console.log(ue.data)
         } catch ( err ) {
             console.log( 'DBget error: ' + err )
