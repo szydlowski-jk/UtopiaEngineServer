@@ -38,7 +38,7 @@ class MongoDB {
         }
     }
 
-    async Get ( gameId, out ) {
+    Get ( gameId, out ) {
         if ( this.db ) {
             let result;
             try {
