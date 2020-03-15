@@ -34,9 +34,9 @@ app.get('/g/:gameid(\\w{6})/data', ( req, res ) => {
     console.log('001');
     let gameid = req.params['gameid'];
     let result;
-    mdb.Get( gameid, (out) => {
+    mdb.Get( gameid, function(back) {
         console.log('THAT Callback');
-        result = out;
+        result = back;
     } );
     res.json( { result: true, data: out, res: result } );
 });
