@@ -31,7 +31,7 @@ app.get('/g/:gameid(\\w{6})', ( req, res ) => {
 });
 
 
-app.post('/api/newgame', ( req, res ) => {
+app.use('/api/newgame', ( req, res ) => {
     let gameid = generateGameId();
     let data = {
         gameId: gameid,
