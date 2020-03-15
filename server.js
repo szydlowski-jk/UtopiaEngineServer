@@ -4,10 +4,8 @@ const cors = require('cors');
 const app = express();
 const port = (process.env.PORT || 3000);
 const engine = require('./engine.js');
+const mongodb = require('./mongodb.js');
 //#endregion dependencies
-
-const MongoClient = require('mongodb').MongoClient;
-const uri = "mongodb+srv://server:serverpassword@utopiadb-qtk8d.mongodb.net/test?retryWrites=true&w=majority";
 
 const pageRoot = { root: __dirname + '/page' };
 
@@ -23,6 +21,7 @@ app.get('/favicon.ico', ( req, res ) => {
     res.sendFile( 'favicon.ico', pageRoot );
 })
 
+
 app.get('/g/game.js', ( req, res ) => {
     res.sendFile('game.js', pageRoot );
 })
@@ -31,15 +30,81 @@ app.get('/g/:gameid(\\w{6})', ( req, res ) => {
     res.sendFile('game.html', pageRoot );
 });
 
-app.use( ( req, res, next ) => {
-    res.status(404).send('Oh well...');
+
+app.post('/api/newgame', ( req, res ) => {
+    let gameid = generateGameId();
+    let data = {
+        gameId: gameid,
+        data: new engine.UtopiaData(),
+        log: []
+    }
+
 })
+
+
+app.use( ( req, res, next ) => {
+//    res.status(404).send('Oh well...');
+    res.sendFile('index.html', pageRoot );
+})
+
 
 app.listen(port, () => {
     console.log(`Utopia Engine Server started [port:${port}]`);
 });
 //#endregion routing
 
+const mdb = new mongodb.MongoDB();
+
+
+//#region db stuff
+async function DBConnect () {
+    console.log('DB connect')
+    try {
+        const client = new MongoClient(
+            uri,
+            {
+                useNewUrlParser: true,
+                reconnectInterval: 1000,
+                reconnectTries: Number.MAX_VALUE
+            }
+        );
+        await client.connect()
+        dbcoll = client.db("UtopiaEngineDB").collection("DataSheets")
+    } catch ( err ) {
+        dbcoll = null
+    }
+}
+
+async function DBgetDoc ( gameId ) {
+    if ()
+}
+
+
+//#endregion db stuff
+
+
+//#region functions
+/* https://stackoverflow.com/a/1349426 */
+function makeid(length) {
+    var result           = '';
+    var characters       = 'abcdefghijklmnopqrstuvwxyz0123456789';
+    var charactersLength = characters.length;
+    for ( var i = 0; i < length; i++ ) {
+        result += characters.charAt(Math.floor(Math.random() * charactersLength));
+    }
+    return result;
+}
+
+function generateGameId () {
+    return makeid(6);
+}
+//#endregion functions
+
+
+
+
+
+// #############################################################################
 
 //let dbcoll;
 
