@@ -38,13 +38,15 @@ class MongoDB {
         }
     }
 
-    Get ( gameId, out ) {
+    Get ( gameId, callback ) {
         if ( this.db ) {
             let result;
             try {
                 this.db.findOne({gameId: gameId}, ( err, doc ) => {
                     console.log( "DOC: ", doc );
-                    out(doc);
+                    console.log( "CALLBACK: ", callback );
+
+                    callback(doc);
 //                    return doc;
                 // }).then( (obj) => {
                 //     console.log( "THEN: ", obj );
