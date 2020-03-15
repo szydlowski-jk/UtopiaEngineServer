@@ -44,11 +44,11 @@ class MongoDB {
             try {
                 result = await this.db.findOne({gameId: gameId}, ( err, doc ) => {
                     console.log( "DOC: ", doc );
-                    out = doc;
+//                    out = doc;
 //                    return doc;
-                }).then( (obj) => {
-                    console.log( "THEN: ", obj );
-                    result = obj;
+                // }).then( (obj) => {
+                //     console.log( "THEN: ", obj );
+                //     result = obj;
                 });
                 console.log( "RES: ", result );
 //                return result;
