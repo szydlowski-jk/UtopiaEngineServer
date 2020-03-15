@@ -37,8 +37,9 @@ app.get('/g/:gameid(\\w{6})/data', ( req, res ) => {
     mdb.Get( gameid, function(back) {
         console.log('THAT Callback: ', back);
         result = back;
-        res.json( { result: true, data: out, res: result } );
+//        res.json( { result: true, data: out, res: result } );
     } );
+    res.json( {dupa: "dupa"})
 });
 
 
