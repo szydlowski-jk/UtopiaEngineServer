@@ -44,8 +44,7 @@ class MongoDB {
             try {
                 this.db.findOne({gameId: gameId}, ( err, doc ) => {
                     console.log( "DOC: ", doc );
-                    out = doc;
-                    result = doc;
+                    out(doc);
 //                    return doc;
                 // }).then( (obj) => {
                 //     console.log( "THEN: ", obj );
