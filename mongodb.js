@@ -42,7 +42,7 @@ class MongoDB {
         if ( this.db ) {
             let result;
             try {
-                await this.db.findOne({gameId: gameId}, ( err, doc ) => {
+                this.db.findOne({gameId: gameId}, ( err, doc ) => {
                     console.log( "DOC: ", doc );
                     console.log( "CALLBACK: ", callback );
 
