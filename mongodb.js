@@ -45,6 +45,7 @@ class MongoDB {
                     console.log( err, doc );
                     return doc;
                 })
+                return result;
             } catch ( err ) {
                 console.error(`MongoDB find failed! gameId:${gameId}`);
             }
