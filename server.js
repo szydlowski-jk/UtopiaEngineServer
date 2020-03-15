@@ -56,33 +56,6 @@ app.listen(port, () => {
 const mdb = new mongodb.MongoDB();
 
 
-//#region db stuff
-async function DBConnect () {
-    console.log('DB connect')
-    try {
-        const client = new MongoClient(
-            uri,
-            {
-                useNewUrlParser: true,
-                reconnectInterval: 1000,
-                reconnectTries: Number.MAX_VALUE
-            }
-        );
-        await client.connect()
-        dbcoll = client.db("UtopiaEngineDB").collection("DataSheets")
-    } catch ( err ) {
-        dbcoll = null
-    }
-}
-
-async function DBgetDoc ( gameId ) {
-    if ()
-}
-
-
-//#endregion db stuff
-
-
 //#region functions
 /* https://stackoverflow.com/a/1349426 */
 function makeid(length) {
