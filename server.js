@@ -37,12 +37,12 @@ app.get('/g/:gameid(\\w{6})/data', ( req, res ) => {
     mdb.Get( gameid, (back) => {
         console.log('THAT Callback: ', back);
         result = back;
+        res.json( {r: result} );
 
 //        res.json( { result: true, data: out, res: result } );
 //        res.json( {dupa: "dupa blada"})
     } );
     console.log( 'AFTER THAT Callback')
-    res.json( {r: result} );
 });
 
 
