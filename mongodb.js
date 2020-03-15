@@ -42,6 +42,7 @@ class MongoDB {
         if ( this.db ) {
             try {
                 let result = await this.db.findOne({gameId: gameId});
+                return result
             } catch ( err ) {
                 console.error(`MongoDB find failed! gameId:${gameId}`);
             }

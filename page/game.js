@@ -13,6 +13,11 @@ function getGameIdFromUrl () {
 let app = new Vue({
     el: "#app",
     data: {
-        gameId: getGameIdFromUrl()
+        gameId: getGameIdFromUrl(),
+    },
+    methods: {
+        getData: function () {
+
+        }
     }
 })
