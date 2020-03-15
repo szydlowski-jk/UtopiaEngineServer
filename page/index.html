@@ -14,8 +14,26 @@
 
     function newGame () {
         // window.location.href = "/g/" + gameid
-        window.location.href = "/api/newgame";
+        // window.location.href = "/api/newgame";
+
+        fetch('https://utopiaengine.herokuapp.com/api/newgame', {
+          method: 'POST', // or 'PUT'
+          mode: 'no-cors', // no-cors, *cors, same-origin
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        //   body: JSON.stringify({action: 'doRest', param: {}}),
+        })
+        .then((response) => response.text() )
+        .then((data) => {
+            data = data ? JSON.parse(data) : {}
+              console.log('Success:', data);
+        })
+        .catch((error) => {
+          console.error('Error:', error)
+        });
     }
+
 </script>
 <!-- <script src="index.js"></script> -->
 <!-- </html><script src="engine.js"></script> -->
