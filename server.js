@@ -38,6 +38,7 @@ app.get('/g/:gameid(\\w{6})/data', ( req, res ) => {
         console.log('THAT Callback: ', back);
         result = back;
 //        res.json( { result: true, data: out, res: result } );
+        res.json( {dupa: "dupa blada"})
     } );
     res.json( {dupa: "dupa"})
 });
