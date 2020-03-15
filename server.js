@@ -41,7 +41,8 @@ app.get('/g/:gameid(\\w{6})/data', ( req, res ) => {
 //        res.json( { result: true, data: out, res: result } );
 //        res.json( {dupa: "dupa blada"})
     } );
-    res.json( result );
+    console( 'AFTER THAT Callback')
+    res.json( {r: result} );
 });
 
 
