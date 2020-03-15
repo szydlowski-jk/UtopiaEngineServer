@@ -37,8 +37,9 @@ app.post('/api/newgame', ( req, res ) => {
         gameId: gameid,
         data: new engine.UtopiaData(),
         log: []
-    }
-
+    };
+    mdb.Insert( data );
+    res.json( { gameId: gameid } );
 })
 
 
