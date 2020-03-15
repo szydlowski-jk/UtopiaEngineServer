@@ -43,9 +43,13 @@ class MongoDB {
             let result;
             try {
                 result = await this.db.findOne({gameId: gameId}, ( err, doc ) => {
-                    console.log( err, doc );
+                    console.log( "DOC: ", doc );
                     return doc;
-                })
+                }).then( (obj) => {
+                    console.log( "THEN: ", obj );
+                    result = obj;
+                });
+                console.log( "RES: ", result );
                 return result;
             } catch ( err ) {
                 console.error(`MongoDB find failed! gameId:${gameId}`);
