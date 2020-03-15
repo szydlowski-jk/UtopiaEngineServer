@@ -37,7 +37,10 @@
         });
 
         if ( gameid ) {
+            console.log('redirecting')
             window.location.href = '/g/' + gameid;
+        } else {
+            console.log('redirection failed!');
         }
     }
 
