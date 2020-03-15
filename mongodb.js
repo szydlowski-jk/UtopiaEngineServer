@@ -38,13 +38,13 @@ class MongoDB {
         }
     }
 
-    async Get ( gameId ) {
+    async Get ( gameId, out ) {
         if ( this.db ) {
             let result;
             try {
                 result = await this.db.findOne({gameId: gameId}, ( err, doc ) => {
                     console.log( "DOC: ", doc );
-                    result = doc;
+                    out = doc;
 //                    return doc;
                 }).then( (obj) => {
                     console.log( "THEN: ", obj );

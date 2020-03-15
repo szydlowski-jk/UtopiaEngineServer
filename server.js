@@ -32,8 +32,9 @@ app.get('/g/:gameid(\\w{6})', ( req, res ) => {
 
 app.get('/g/:gameid(\\w{6})/data', ( req, res ) => {
     let gameid = req.params['gameid'];
-    let result = mdb.Get( gameid );
-    res.json( { result: true, data: result } );
+    let out;
+    let result = mdb.Get( gameid, out );
+    res.json( { result: true, data: out } );
 });
 
 
