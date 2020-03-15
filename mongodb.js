@@ -38,7 +38,7 @@ class MongoDB {
         }
     }
 
-    Get ( gameId, callback ) {
+    async Get ( gameId, callback ) {
         if ( this.db ) {
             let result;
             try {
