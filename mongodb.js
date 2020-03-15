@@ -51,10 +51,11 @@ class MongoDB {
                     result = obj;
                 });
                 console.log( "RES: ", result );
-                return result;
+//                return result;
             } catch ( err ) {
                 console.error(`MongoDB find failed! gameId:${gameId}`);
             }
+            return result;
         }
     }
 }
