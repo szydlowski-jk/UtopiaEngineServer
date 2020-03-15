@@ -26,6 +26,27 @@ class MongoDB {
             console.log('MongoDB connection failed!');
         }
     }
+
+    async Insert ( data ) {
+        if ( this.db ) {
+            try {
+                await this.db.insertOne( data );
+            } catch ( err ) {
+                console.error('MongoDB insert of data failed!');
+                console.error(data);
+            }
+        }
+    }
+
+    async Get ( gameId ) {
+        if ( this.db ) {
+            try {
+                let result = await this.db.findOne({gameId: gameId});
+            } catch ( err ) {
+                console.error(`MongoDB find failed! gameId:${gameId}`);
+            }
+        }
+    }
 }
 
 module.exports = {
