@@ -31,17 +31,12 @@
             data = data ? JSON.parse(data) : {}
             console.log('New Game id:', data);
             gameid = data.gameId;
+            console.log('redirecting')
+            window.location.href = '/g/' + gameid;
         })
         .catch((error) => {
           console.error('Error:', error)
         });
-
-        if ( gameid ) {
-            console.log('redirecting')
-            window.location.href = '/g/' + gameid;
-        } else {
-            console.log('redirection failed!');
-        }
     }
 
 </script>
