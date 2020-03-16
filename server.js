@@ -37,7 +37,9 @@ app.get('/g/:gameid(\\w{6})/data', ( req, res ) => {
     mdb.Get( gameid, (back) => {
         console.log('THAT Callback: ', back);
         result = back;
-        res.json( {r: result} );
+        let ue = new engine.UtopiaEngine(back.data);
+        let actions = ue.getActions()
+        res.json( { gameId: back.gameId, data: back.data, actions: actions } );
 
 //        res.json( { result: true, data: out, res: result } );
 //        res.json( {dupa: "dupa blada"})
