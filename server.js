@@ -38,7 +38,7 @@ app.get('/g/:gameid(\\w{6})/data', ( req, res ) => {
         console.log('THAT Callback: ', back);
         result = back;
         let ue = new engine.UtopiaEngine(back.data);
-        let actions = ue.getActions()
+        let actions = ue.getAvailableActions()
         res.json( { gameId: back.gameId, data: back.data, actions: actions } );
 
 //        res.json( { result: true, data: out, res: result } );
