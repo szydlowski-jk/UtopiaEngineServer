@@ -7,15 +7,18 @@
     <!-- development version, includes helpful console warnings -->
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div id="app">
+        <div class="status-bar">
 
+        </div>
         <p>Utopia Engine Adventure Sheet</p>
         <p>GameId {{ gameId }}</p>
 
-        <!-- <p>Data:</p> -->
-        <!-- <p>{{ getGameData() }}</p> -->
+        <p>Data:</p>
+        <p>{{ getGameData() }}</p>
     </div>
 </body>
 </html>
