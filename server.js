@@ -40,7 +40,7 @@ app.get('/g/:gameid(\\w{6})/data', ( req, res ) => {
         let ue = new engine.UtopiaEngine(back.data);
         let actions = ue.getActions();
         let available = ue.getAvailableActions();
-        console.log("A: ", actions);
+//        console.log("A: ", actions);
         console.log(("AA: ", available));
 
         res.json( { gameId: back.gameId, data: back.data, actions: actions, available: available } );
