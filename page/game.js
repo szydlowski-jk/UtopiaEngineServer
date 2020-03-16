@@ -20,12 +20,13 @@ let app = new Vue({
         getGameData: function () {
             axios.get(`/g/${ this.gameId }/data`)
             .then( ( res ) => {
-                gameData = res
+                this.gameData = res
                 console.log('getGameData success');
             })
             .catch( ( err ) => {
                 console.error('getGameData error');
             })
+            return this.gameData
         }
     }
 })
