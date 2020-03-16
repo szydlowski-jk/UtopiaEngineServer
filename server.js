@@ -35,11 +35,15 @@ app.get('/g/:gameid(\\w{6})/data', ( req, res ) => {
     let gameid = req.params['gameid'];
     let result;
     mdb.Get( gameid, (back) => {
-        console.log('THAT Callback: ', back);
+//        console.log('THAT Callback: ', back);
         result = back;
         let ue = new engine.UtopiaEngine(back.data);
         let actions = ue.getActions();
-        res.json( { gameId: back.gameId, data: back.data, actions: actions } );
+        let available = ue.getAvailableActions();
+        console.log("A: ", actions);
+        console.log(("AA: ", available));
+
+        res.json( { gameId: back.gameId, data: back.data, actions: actions, available: available } );
 
 //        res.json( { result: true, data: out, res: result } );
 //        res.json( {dupa: "dupa blada"})
