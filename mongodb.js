@@ -38,6 +38,19 @@ class MongoDB {
         }
     }
 
+    // TODO Finish this up
+    // async GetAll ( callback ) {
+    //     if ( this.db ) {
+    //         try {
+    //             this.db.find( {}, ( err, doc ) {
+
+    //             })
+    //         } catch {
+    //             console.error( 'MongoDV findall failed!' );
+    //         }
+    //     }
+    // }
+
     async Get ( gameId, callback ) {
         if ( this.db ) {
             let result;

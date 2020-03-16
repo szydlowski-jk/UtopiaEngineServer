@@ -14,10 +14,18 @@ let app = new Vue({
     el: "#app",
     data: {
         gameId: getGameIdFromUrl(),
+        gameData: null,
     },
     methods: {
-        getData: function () {
-
+        getGameData: function () {
+            axios.get(`/g/${ this.gameId }/data`)
+            .then( ( res ) => {
+                gameData = res
+                console.log('getGameData success');
+            })
+            .catch( ( err ) => {
+                console.error('getGameData error');
+            })
         }
     }
 })

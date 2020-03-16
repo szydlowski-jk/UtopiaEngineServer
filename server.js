@@ -63,6 +63,12 @@ app.use('/api/newgame', ( req, res ) => {
     res.json( { gameId: gameid } );
 })
 
+// TODO add support for geting whole list
+// app.use('/api/gamelist', ( req, res ) => {
+//     mdb.get()
+// })
+
+
 
 app.use( ( req, res, next ) => {
 //    res.status(404).send('Oh well...');
