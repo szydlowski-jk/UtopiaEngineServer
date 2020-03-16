@@ -21,6 +21,10 @@ app.get('/favicon.ico', ( req, res ) => {
     res.sendFile( 'favicon.ico', pageRoot );
 })
 
+app.get('/style.css', ( req, res ) => {
+    res.sendFile( 'style.css', pageRoot );
+})
+
 
 app.get('/g/game.js', ( req, res ) => {
     res.sendFile('game.js', pageRoot );
