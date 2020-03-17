@@ -18,7 +18,7 @@
 
         let gameid;
 
-        fetch('https://utopiaengine.herokuapp.com/api/newgame', {
+        fetch('https://utopiaengine.herokuapp.com/g', {
           method: 'POST', // or 'PUT'
           mode: 'no-cors', // no-cors, *cors, same-origin
           headers: {
@@ -32,7 +32,7 @@
             console.log('New Game id:', data);
             gameid = data.gameId;
             console.log('redirecting')
-            window.location.href = '/g/' + gameid;
+            window.location.href = '/' + gameid;
         })
         .catch((error) => {
           console.error('Error:', error)

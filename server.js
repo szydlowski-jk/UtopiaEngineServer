@@ -30,7 +30,7 @@ app.get('/g/game.js', ( req, res ) => {
     res.sendFile('game.js', pageRoot );
 })
 
-app.get('/g/:gameid(\\w{6})', ( req, res ) => {
+app.get('/:gameid(\\w{6})', ( req, res ) => {
     res.sendFile('game.html', pageRoot );
 });
 
@@ -56,6 +56,19 @@ app.get('/g/:gameid(\\w{6})/data', ( req, res ) => {
 });
 
 
+app.post('/g', ( req, res ) => {
+    let gameid = generateGameId();
+    let data = {
+        gameId: gameid,
+        data: new engine.UtopiaData(),
+        log: []
+    };
+    mdb.Insert( data );
+    res.json( { gameId: gameid } );
+})
+
+
+// ! old NEWGAME routing
 app.use('/api/newgame', ( req, res ) => {
     let gameid = generateGameId();
     let data = {
