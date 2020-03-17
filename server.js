@@ -17,22 +17,22 @@ app.get('/', ( req, res ) => {
     res.sendFile('index.html', pageRoot );
 });
 
+app.get('/:gameid(\\w{6})', ( req, res ) => {
+    res.sendFile('game.html', pageRoot );
+});
+
+app.get('/game.js', ( req, res ) => {
+    res.sendFile('game.js', pageRoot );
+})
+
 app.get('/favicon.ico', ( req, res ) => {
     res.sendFile( 'favicon.ico', pageRoot );
 })
 
-// app.get('/style.css', ( req, res ) => {
-//     res.sendFile( 'style.css', pageRoot );
-// })
-
-
-app.get('/g/game.js', ( req, res ) => {
-    res.sendFile('game.js', pageRoot );
+app.get('/style.css', ( req, res ) => {
+    res.sendFile( 'style.css', pageRoot );
 })
 
-app.get('/:gameid(\\w{6})', ( req, res ) => {
-    res.sendFile('game.html', pageRoot );
-});
 
 app.get('/g/:gameid(\\w{6})/data', ( req, res ) => {
     console.log('001');
