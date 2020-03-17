@@ -56,8 +56,8 @@ class MongoDB {
             let result;
             try {
                 this.db.findOne({gameId: gameId}, ( err, doc ) => {
-                    console.log( "DOC: ", doc );
-                    console.log( "CALLBACK: ", callback );
+                    // console.log( "DOC: ", doc );
+                    // console.log( "CALLBACK: ", callback );
 
                     callback(doc);
 //                    return doc;
