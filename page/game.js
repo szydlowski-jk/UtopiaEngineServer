@@ -15,6 +15,7 @@ let app = new Vue({
     data: {
         gameId: getGameIdFromUrl(),
         gameData: null,
+        actions: null,
     },
     methods: {
         getGameData: function () {
@@ -27,9 +28,22 @@ let app = new Vue({
                 console.error('getGameData error');
             })
             return this.gameData
+        },
+
+        getActions: function () {
+            axios.get(`/g/${ this.gameId }/actions`)
+            .then( ( res ) => {
+                this.actions = res.availableActions
+                console.log('getActions success');
+            })
+            .catch( ( err ) => {
+                console.error('getActions error');
+            })
+            return this.actions
         }
     },
     created () {
         this.getGameData();
+        this.getActions();
     }
 })

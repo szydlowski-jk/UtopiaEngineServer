@@ -36,30 +36,21 @@ app.get('/style.css', ( req, res ) => {
 
 
 app.get('/g/:gameid(\\w{6})/data', ( req, res ) => {
-    console.log('001');
     let gameid = req.params['gameid'];
-    let result;
     mdb.Get( gameid, (back) => {
-//        console.log('THAT Callback: ', back);
-        result = back;
         let ue = new engine.UtopiaEngine(back.data);
         let actions = ue.getActions();
-        let aa = ue.getAvailableActions();
-        console.log('a:');
-        console.log(actions);
-        console.log('aa:');
-        console.log(aa);
-        console.log(typeof aa);
-
-        let actionsjson = JSON.stringify(aa)
-        console.log(actionsjson);
-
-//        res.json( { gameId: back.gameId, data: back.data, actions: actions, available: aa } );
-        res.json( { available: actionsjson , aa: aa} )
-//        res.json( { result: true, data: out, res: result } );
-//        res.json( {dupa: "dupa blada"})
+        res.json( {gameId: back.gameId, data: back.data, allActions: actions});
     } );
-    console.log( 'AFTER THAT Callback')
+});
+
+app.get('/g/:gameid(\\w{6})/actions', ( req, res ) => {
+    let gameid = req.params['gameid'];
+    mdb.Get( gameid, (back) => {
+        let ue = new engine.UtopiaEngine(back.data);
+        let actions = ue.getAvailableActions();
+        res.json( {gameId: back.gameId, actions: actions});
+    } );
 });
 
 
