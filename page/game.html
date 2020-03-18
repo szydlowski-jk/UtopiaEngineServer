@@ -22,6 +22,11 @@
 
         <p>Actions:</p>
         <p>{{ actions }}</p>
+
+        <div v-for="(value, name) in actions">
+            <input id= {{ name }} type="button" value= {{ name }}>
+        </div>
+
     </div>
 </body>
 </html>

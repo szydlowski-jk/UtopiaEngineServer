@@ -21,7 +21,7 @@ let app = new Vue({
         getGameData: function () {
             axios.get(`/g/${ this.gameId }/data`)
             .then( ( res ) => {
-                this.gameData = res.data.data
+                this.gameData = res.data.data;
                 console.log('getGameData success');
             })
             .catch( ( err ) => {
@@ -33,7 +33,7 @@ let app = new Vue({
         getActions: function () {
             axios.get(`/g/${ this.gameId }/actions`)
             .then( ( res ) => {
-                this.actions = res.data
+                this.actions = res.data.actions;
                 console.log('getActions success');
             })
             .catch( ( err ) => {
