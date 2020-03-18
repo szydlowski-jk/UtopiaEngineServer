@@ -33,7 +33,7 @@ let app = new Vue({
         getActions: function () {
             axios.get(`/g/${ this.gameId }/actions`)
             .then( ( res ) => {
-                this.actions = res.availableActions
+                this.actions = res.actions
                 console.log('getActions success');
             })
             .catch( ( err ) => {
