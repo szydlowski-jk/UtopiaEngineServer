@@ -30,6 +30,6 @@ let app = new Vue({
         }
     },
     created () {
-        getGameData();
+        this.getGameData();
     }
 })
