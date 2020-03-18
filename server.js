@@ -35,6 +35,11 @@ app.get('/style.css', ( req, res ) => {
 })
 
 
+app.post('/jsonecho', ( req, res ) => {
+    console.log( req.body );
+    res.json( req.body );
+})
+
 app.get('/g/:gameid(\\w{6})/data', ( req, res ) => {
     let gameid = req.params['gameid'];
     mdb.Get( gameid, (back) => {
