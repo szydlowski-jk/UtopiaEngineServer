@@ -49,6 +49,7 @@ app.get('/g/:gameid(\\w{6})/data', ( req, res ) => {
         console.log(actions);
         console.log('aa:');
         console.log(aa);
+        console.log(typeof aa);
 
         let actionsjson = JSON.stringify(aa)
         console.log(actionsjson);

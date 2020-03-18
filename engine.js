@@ -452,7 +452,7 @@ class UtopiaEngine {
 
     //#region API
     getAvailableActions () {
-        let result = []
+        let result = {}
         for (const action in this.actions) {
             const check = this.checkAction(action)
             if ( check.result == true ) {
