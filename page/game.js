@@ -28,5 +28,8 @@ let app = new Vue({
             })
             return this.gameData
         }
+    },
+    created () {
+        getGameData();
     }
 })
