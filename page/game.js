@@ -40,6 +40,10 @@ let app = new Vue({
                 console.error('getActions error');
             })
             return this.actions
+        },
+
+        doRest: function () {
+            console.log("doRest clicked!");
         }
     },
     created () {
