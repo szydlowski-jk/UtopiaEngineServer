@@ -13,6 +13,7 @@ app.use(cors());
 app.use(express.json());
 
 //#region routing
+
 app.get('/', ( req, res ) => {
     res.sendFile('index.html', pageRoot );
 });
@@ -43,11 +44,13 @@ app.get('/g/:gameid(\\w{6})/data', ( req, res ) => {
         result = back;
         let ue = new engine.UtopiaEngine(back.data);
         let actions = ue.getActions();
-        let available = ue.getAvailableActions();
-//        console.log("A: ", actions);
-        console.log(("AA: ", available));
+        let aa = ue.getAvailableActions();
+        console.log('a:');
+        console.log(actions);
+        console.log('aa:');
+        console.log(aa);
 
-        res.json( { gameId: back.gameId, data: back.data, actions: actions, available: available } );
+        res.json( { gameId: back.gameId, data: back.data, actions: actions, available: aa } );
 
 //        res.json( { result: true, data: out, res: result } );
 //        res.json( {dupa: "dupa blada"})
