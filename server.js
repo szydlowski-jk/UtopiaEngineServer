@@ -50,8 +50,11 @@ app.get('/g/:gameid(\\w{6})/data', ( req, res ) => {
         console.log('aa:');
         console.log(aa);
 
+        let actionsjson = JSON.stringify(aa)
+        console.log(actionjson);
+
 //        res.json( { gameId: back.gameId, data: back.data, actions: actions, available: aa } );
-        res.json( { available: aa , a0: aa[0]} )
+        res.json( { available: actionsjson , aa: aa} )
 //        res.json( { result: true, data: out, res: result } );
 //        res.json( {dupa: "dupa blada"})
     } );
