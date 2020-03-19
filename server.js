@@ -65,6 +65,8 @@ app.get('/g/:gameid(\\w{6})/actions', ( req, res ) => {
 app.post('/g', ( req, res ) => {
     let gameid = generateGameId();
     let token = uuid.uuidv4();
+    console.log(`token = ${token}`);
+
     let data = {
         gameId: gameid,
         data: new engine.UtopiaData(),
