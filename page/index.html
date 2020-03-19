@@ -44,7 +44,10 @@
             data = data ? JSON.parse(data) : {}
             console.log('New Game id:', data);
             gameid = data.gameId;
-            console.log('redirecting')
+
+            localStorage.setItem(data.gameid, data.token);
+
+            console.log('redirecting');
             window.location.href = '/' + gameid;
         })
         .catch((error) => {
