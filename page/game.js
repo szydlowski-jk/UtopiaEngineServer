@@ -48,8 +48,13 @@ let app = new Vue({
 
         name: function () {
             console.log('name clicked!');
+        },
 
+        onClick: function ( param ) {
+            console.log('on click with param = ' + param);
         }
+
+
     },
     created () {
         this.getGameData();
