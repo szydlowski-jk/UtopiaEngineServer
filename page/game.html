@@ -11,35 +11,35 @@
 </head>
 <body>
     <div id="app">
-        <div class="status-bar">
-
-        </div>
-        <p>Utopia Engine Adventure Shieeeet</p>
-        <p>GameId {{ gameId }}</p>
-
-        <p>Data:</p>
-        <p>{{ gameData }}</p>
-
-        <p>Actions:</p>
-        <p>{{ actions }}</p>
-
-        <p>Auto generated Action Buttons:</p>
-        <div v-for="(value, name) in actions">
-            <!-- <p>{{name}}</p> -->
-            <!-- <input :id="name" type=button :value="name" method: this.{{name}}> -->
-            <!-- <input :id="name" type=button @click="doRest" :value="name"> -->
-            <!-- <input :id="name" type=button @click="name" :value="name"> -->
-            <!-- <input type=button @click={{name}} :value="name"> -->
-            <!-- <input :id="name" type=button @click="{{name}}" :value="name"> -->
-            <!-- <input :id="name" type=button v-on:click="onClick('{{name}}')" :value="name"> -->
-            <!-- <input type=button v-on:click="onClick({{name}})" :value="name"> -->
-            <!-- <input :id="name" type=button v-on:click="onClick('doRest')" :value="name"> -->
-            <input :id="name" type=button @click="onClick2" :value="name">
-
-
-            <!-- <input id={{ name }} type="button" value={{ name }}> -->
+        <div class="nav-bar">
+            <p>Utopia Engine Adventure Shieeeet</p>
+            <p>GameId {{ gameId }}</p>
         </div>
 
+        <div class="data-sheet">
+            <p>Data:</p>
+            <p>{{ gameData }}</p>
+
+            <p>Actions:</p>
+            <p>{{ actions }}</p>
+
+            <p>Auto generated Action Buttons:</p>
+            <div v-for="(value, name) in actions">
+                <!-- <p>{{name}}</p> -->
+                <!-- <input :id="name" type=button :value="name" method: this.{{name}}> -->
+                <!-- <input :id="name" type=button @click="doRest" :value="name"> -->
+                <!-- <input :id="name" type=button @click="name" :value="name"> -->
+                <!-- <input type=button @click={{name}} :value="name"> -->
+                <!-- <input :id="name" type=button @click="{{name}}" :value="name"> -->
+                <!-- <input :id="name" type=button v-on:click="onClick('{{name}}')" :value="name"> -->
+                <!-- <input type=button v-on:click="onClick({{name}})" :value="name"> -->
+                <!-- <input :id="name" type=button v-on:click="onClick('doRest')" :value="name"> -->
+                <input :id="name" type=button @click="onClick2" :value="name">
+
+
+                <!-- <input id={{ name }} type="button" value={{ name }}> -->
+            </div>
+        </div>
     </div>
 </body>
 </html>
