@@ -45,7 +45,7 @@
             console.log('New Game id:', data);
             gameid = data.gameId;
 
-            localStorage.setItem(data.gameid, data.token);
+            localStorage.setItem(data.gameId, data.token);
 
             console.log('redirecting');
             window.location.href = '/' + gameid;
