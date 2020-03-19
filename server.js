@@ -64,7 +64,7 @@ app.get('/g/:gameid(\\w{6})/actions', ( req, res ) => {
 
 app.post('/g', ( req, res ) => {
     let gameid = generateGameId();
-    let token = uuid.uuidv4();
+    let token = uuid.v4();
     console.log(`token = ${token}`);
 
     let data = {
