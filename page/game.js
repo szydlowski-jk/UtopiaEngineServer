@@ -44,6 +44,11 @@ let app = new Vue({
 
         doRest: function () {
             console.log("doRest clicked!");
+        },
+
+        name: function () {
+            console.log('name clicked!');
+
         }
     },
     created () {
