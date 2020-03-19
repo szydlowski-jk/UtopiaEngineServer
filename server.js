@@ -5,7 +5,9 @@ const app = express();
 const port = (process.env.PORT || 3000);
 const engine = require('./engine.js');
 const mongodb = require('./mongodb.js');
-import { v4 as uuidv4 } from 'uuid';
+const uuid = require('uuid')
+
+// import { v4 as uuidv4 } from 'uuid';
 //#endregion dependencies
 
 const pageRoot = { root: __dirname + '/page' };
@@ -62,7 +64,7 @@ app.get('/g/:gameid(\\w{6})/actions', ( req, res ) => {
 
 app.post('/g', ( req, res ) => {
     let gameid = generateGameId();
-    let token = uuidv4();
+    let token = uuid.uuidv4();
     let data = {
         gameId: gameid,
         data: new engine.UtopiaData(),
