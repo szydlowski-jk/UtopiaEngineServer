@@ -19,6 +19,15 @@
         </div>
 
         <div class="data-sheet">
+            <div class="stores">
+                <p>Silver: {{ gameData.components[0] }}</p>
+                <p>Quartz: {{ gameData.components[1] }}</p>
+                <p>Gum: {{ gameData.components[2] }}</p>
+                <p>Silica: {{ gameData.components[3] }}</p>
+                <p>Wax: {{ gameData.components[4] }}</p>
+                <p>Lead: {{ gameData.components[5] }}</p>
+            </div>
+
             <p>Data:</p>
             <p>{{ gameData }}</p>
 
@@ -27,15 +36,6 @@
 
             <p>Auto generated Action Buttons:</p>
             <div v-for="(value, name) in actions">
-                <!-- <p>{{name}}</p> -->
-                <!-- <input :id="name" type=button :value="name" method: this.{{name}}> -->
-                <!-- <input :id="name" type=button @click="doRest" :value="name"> -->
-                <!-- <input :id="name" type=button @click="name" :value="name"> -->
-                <!-- <input type=button @click={{name}} :value="name"> -->
-                <!-- <input :id="name" type=button @click="{{name}}" :value="name"> -->
-                <!-- <input :id="name" type=button v-on:click="onClick('{{name}}')" :value="name"> -->
-                <!-- <input type=button v-on:click="onClick({{name}})" :value="name"> -->
-                <!-- <input :id="name" type=button v-on:click="onClick('doRest')" :value="name"> -->
                 <input :id="name" type=button @click="onClick2" :value="name">
 
 
