@@ -32,7 +32,9 @@
             <input type=button @click={{name}} :value="name">
             <input type=button @click="{{name}}" :value="name">
             <input type=button v-on:click="onClick('{{name}}')" :value="name">
+            <input type=button v-on:click="onClick({{name}})" :value="name">
             <input type=button v-on:click="onClick('doRest')" :value="name">
+            <input type=button @click="onClick2" :value="name">
 
 
             <!-- <input id={{ name }} type="button" value={{ name }}> -->

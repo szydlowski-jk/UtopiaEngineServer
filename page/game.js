@@ -52,6 +52,10 @@ let app = new Vue({
 
         onClick: function ( param ) {
             console.log('on click with param = ' + param);
+        },
+
+        onClick2: function ( event ) {
+            console.log('on click 2 target = ' + event.target);
         }
 
 
