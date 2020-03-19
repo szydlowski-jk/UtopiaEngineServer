@@ -14,7 +14,7 @@ let app = new Vue({
     el: "#app",
     data: {
         gameId: getGameIdFromUrl(),
-        gameData: null,
+        gameData: {},
         actions: null,
     },
     methods: {
