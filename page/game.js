@@ -55,7 +55,7 @@ let app = new Vue({
         },
 
         onClick2: function ( event ) {
-            console.log('on click 2 target = ' + event.target.name);
+            console.log('on click 2 target = ' + event.target.id);
         }
 
 
