@@ -23,17 +23,17 @@
         <p>Actions:</p>
         <p>{{ actions }}</p>
 
-        <p>Buttons:</p>
+        <p>Auto generated Action Buttons:</p>
         <div v-for="(value, name) in actions">
             <!-- <p>{{name}}</p> -->
             <!-- <input :id="name" type=button :value="name" method: this.{{name}}> -->
-            <input :id="name" type=button @click="doRest" :value="name">
-            <input :id="name" type=button @click="name" :value="name">
+            <!-- <input :id="name" type=button @click="doRest" :value="name"> -->
+            <!-- <input :id="name" type=button @click="name" :value="name"> -->
             <!-- <input type=button @click={{name}} :value="name"> -->
-            <input :id="name" type=button @click="{{name}}" :value="name">
-            <input :id="name" type=button v-on:click="onClick('{{name}}')" :value="name">
+            <!-- <input :id="name" type=button @click="{{name}}" :value="name"> -->
+            <!-- <input :id="name" type=button v-on:click="onClick('{{name}}')" :value="name"> -->
             <!-- <input type=button v-on:click="onClick({{name}})" :value="name"> -->
-            <input :id="name" type=button v-on:click="onClick('doRest')" :value="name">
+            <!-- <input :id="name" type=button v-on:click="onClick('doRest')" :value="name"> -->
             <input :id="name" type=button @click="onClick2" :value="name">
 
 
