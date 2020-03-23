@@ -38,9 +38,6 @@ body {
   margin: auto;
   background-color: whitesmoke;
   background-color: yellow;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
 }
 
 .data-sheet .status-bar {
@@ -51,5 +48,43 @@ body {
 
 .data-sheet .status-bar .stores {
   text-align: right;
+}
+
+.data-sheet .time-track {
+  padding: 5px 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  background-color: lime;
+  font-size: 25px;
+}
+
+.data-sheet .time-track span {
+  margin: 2px;
+}
+
+.data-sheet .gods-hand {
+  background-color: lime;
+  padding: 5px 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  font-size: 25px;
+}
+
+.data-sheet .gods-hand .dogs-hand-points {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.data-sheet .gods-hand span {
+  margin: 2px;
 }
 /*# sourceMappingURL=style.css.map */

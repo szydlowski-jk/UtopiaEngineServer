@@ -57,6 +57,28 @@
                     </span></p>
                 </div>
             </div>
+            <div class="time-track">
+                Time Track
+                <div v-for="i in gameData.daysPassed">
+                    <span><i class="fas fa-square"></i></span>
+                </div>
+                <div v-for="i in 22-gameData.daysPassed">
+                    <span><i class="far fa-square"></i></span>
+                </div>
+            </div>
+            <div class="gods-hand">
+                <div class="gods-hand-title">
+                    Gods Hand
+                </div>
+                <div class="dogs-hand-points">
+                    <div v-for="i in 6-gameData.godshand">
+                        <span><i class="far fa-square"></i></span>
+                    </div>
+                    <div v-for="i in gameData.godshand">
+                        <span><i class="fas fa-square"></i></span>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <p>Data:</p>
