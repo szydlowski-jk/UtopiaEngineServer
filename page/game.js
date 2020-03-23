@@ -4,7 +4,12 @@ function getGameIdFromUrl () {
     let url = window.location.href
     const lastSlash = url.lastIndexOf('/')
     if ( lastSlash != -1 ) {
-        return url.substr( lastSlash + 1 )
+        // handle local game.html
+        if ( url.substr( lastSlash + 1 ) == "game.html" ) {
+            return "idmb4t";
+        } else {
+            return url.substr( lastSlash + 1 )
+        }
     } else {
         return null
     }
@@ -15,11 +20,11 @@ let app = new Vue({
     data: {
         gameId: getGameIdFromUrl(),
         gameData: {},
-        actions: null,
+        actions: {},
     },
     methods: {
         getGameData: function () {
-            axios.get(`/g/${ this.gameId }/data`)
+            axios.get(`https://utopiaengine.herokuapp.com/g/${ this.gameId }/data`)
             .then( ( res ) => {
                 this.gameData = res.data.data;
                 console.log('getGameData success');
@@ -31,7 +36,7 @@ let app = new Vue({
         },
 
         getActions: function () {
-            axios.get(`/g/${ this.gameId }/actions`)
+            axios.get(`https://utopiaengine.herokuapp.com/g/${ this.gameId }/actions`)
             .then( ( res ) => {
                 this.actions = res.data.actions;
                 console.log('getActions success');
@@ -50,8 +55,8 @@ let app = new Vue({
             console.log('name clicked!');
         },
 
-        onClick: function ( param ) {
-            console.log('on click with param = ' + param);
+        onClick: function ( event ) {
+
         },
 
         onClick2: function ( event ) {

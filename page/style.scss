@@ -1,5 +1,14 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
 body {
-    background-color: lightgrey;
+    background-color: gray;
+}
+
+#app {
+    margin-top: 50px;
 }
 
 .nav-bar {
@@ -8,15 +17,38 @@ body {
 }
 
 .title {
+    background-color: lightgray;
     width: 100%;
     margin: auto;
     display: flex;
-    align-content: space-between;
-    align-items: center;
+    justify-content: space-between;
+    // align-items: center;
+
+    h1 {
+        padding: 20px 0px;
+        margin-left: 300px;
+    }
 }
 
 .data-sheet {
     width: 800px;
     margin: auto;
     background-color: whitesmoke;
+    background-color: yellow;
+
+    display: flex;
+
+    .status-bar {
+        display: flex;
+
+
+        .tools {
+
+        }
+
+        .stores {
+         text-align: right;
+        }
+    }
+
 }
