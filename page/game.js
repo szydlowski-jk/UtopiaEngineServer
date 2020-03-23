@@ -6,7 +6,8 @@ function getGameIdFromUrl () {
     if ( lastSlash != -1 ) {
         // handle local game.html
         if ( url.substr( lastSlash + 1 ) == "game.html" ) {
-            return "idmb4t";
+            return "test01";
+            // return "idmb4t";
         } else {
             return url.substr( lastSlash + 1 )
         }

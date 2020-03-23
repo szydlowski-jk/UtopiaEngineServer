@@ -62,8 +62,11 @@
                 <div v-for="i in gameData.daysPassed">
                     <span><i class="fas fa-square"></i></span>
                 </div>
-                <div v-for="i in 22-gameData.daysPassed">
+                <div v-for="i in gameData.doomsday - gameData.daysPassed">
                     <span><i class="far fa-square"></i></span>
+                </div>
+                <div v-for="i in 22-gameData.doomsday">
+                    <span><i class="fas fa-skull-crossbones"></i></span>
                 </div>
             </div>
             <div class="gods-hand">
